@@ -11,3 +11,5 @@ class Image(models.Model):
 class Location(models.Model):
 	location = models.CharField(max_length = 60)
 
+class Category(models.Model):
+	category = models.Cahrfield(max_length = 60)
