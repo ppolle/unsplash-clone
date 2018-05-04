@@ -1,10 +1,11 @@
 from django.shortcuts import render
-from .models import Image
+from .models import Image,Location,Category
 
 # Create your views here.
 def index(request):
 	images = Image.objects.all()
-	return render(request,'index.html',{"images":images})
+	imageLocations = Location.objects.all()
+	return render(request,'index.html',{"images":images,"imageLocations":imageLocations})
 
 def search_results(request):
 	if request.GET['search']:
@@ -16,3 +17,7 @@ def search_results(request):
 	else:
 		message = "You haven't searched for any item"
 		return render(request,'search.html',{"message":message})
+
+def location(request,location):
+	images = Image.objects.filter(image_location__location__icontains = location)
+	return render(request,'location.html',{"images":images})
