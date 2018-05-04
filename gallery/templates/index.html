@@ -1,4 +1,18 @@
 {%extends 'base.html'%}
 {% block content%}
-<p>Testing</p>
+<p class="text-center">Testing</p>
+<div class="container">
+	<div class="row">
+		{%for image in images%}
+		<div class="col-md-4">
+			
+				{{ image.image_name }}
+				{{ image.image_description }}
+				<img src="{{image.image.url}}">
+				
+			
+		</div>
+		{%endfor%}
+	</div>
+</div>
 {%endblock%}
