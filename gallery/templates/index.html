@@ -7,8 +7,9 @@
 	<div class="row">
 		<p class="text-center">
 			{%for location in imageLocations%}
-			<a href="/imageLocation/{{location.location}}">
+			<a href="{% url 'imageLocation' location.location%}}">
 				{{location.location}},</a>
+				
 			{%endfor%}
 		</p>
 

@@ -24,6 +24,11 @@ class Image(models.Model):
 	def __str__(self):
 		return self.image_name
 
+	def save_image(self):
+		self.save()
+
+	def delete
+
 	@classmethod
 	def search_by_title(cls,search_term):
 		images = cls.objects.filter(image_name__icontains = search_term)
