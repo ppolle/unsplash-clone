@@ -32,8 +32,12 @@ class Image(models.Model):
 
 	@staticmethod
 	def update_image(id,image_description,image_location,image_name,image):
-		Image.objects.filter(pk=id).update(image=image,image_name=image_name,image_description=image_description)
+		Image.objects.filter(pk=id).update(image=image,image_name=image_name,image_description=image_description,image_location = image_location)
 
+	@classmethod
+	def get_image_by_id(cls,id):
+		image = cls.objects.get(pk = id)
+		return image
 
 	@classmethod
 	def search_by_title(cls,search_term):
