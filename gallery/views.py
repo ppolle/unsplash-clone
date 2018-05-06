@@ -19,5 +19,5 @@ def search_results(request):
 		return render(request,'search.html',{"message":message})
 
 def location(request,location):
-	images = Image.objects.filter(image_location__location__startswith = location)
+	images = Image.filter_by_location(location)
 	return render(request,'location.html',{"images":images})
