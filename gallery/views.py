@@ -27,6 +27,6 @@ def location(request,location):
 	return render(request,'filter.html',{"images":images,"imageLocations":imageLocations})
 
 def imageCategory(request,imageCategory):
-	images = Image.filter_by_category(imageCategory)
+	images = Image.search_image(imageCategory)
 	imageLocations = Location.objects.all()
 	return render(request,'filter.html',{"images":images,"imageLocations":imageLocations})
