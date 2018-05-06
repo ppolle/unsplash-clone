@@ -27,7 +27,13 @@ class Image(models.Model):
 	def save_image(self):
 		self.save()
 
-	def delete
+	def delete_image(self):
+		self.delete()
+
+	@staticmethod
+	def update_image(id,image_description,image_location,image_name,image):
+		Image.objects.filter(pk=id).update(image=image,image_name=image_name,image_description=image_description)
+
 
 	@classmethod
 	def search_by_title(cls,search_term):
