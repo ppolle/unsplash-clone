@@ -22,7 +22,7 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Locations <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 {%for location in imageLocations%}
-                <li><a href="{% url 'imageLocation' location.location%}">{{location.location}}</a></li>
+                <li><a href="{% url 'imageLocation' location.id%}">{{location.location}}</a></li>
                 {%endfor%}
               </ul>
             </li>
