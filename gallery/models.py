@@ -13,8 +13,8 @@ class Location(models.Model):
 
 	@classmethod
 	def update_location(cls,id,location):
-		return updated_location = cls.objects.filter(pk = id).update(location = location)
-
+		updated_location = cls.objects.filter(pk = id).update(location = location)
+		return updated_location		
 
 	def __str__(self):
 		return self.location
@@ -30,8 +30,8 @@ class Category(models.Model):
 
 	@classmethod
 	def update_category(cls,id,category):
-		return category = cls.objects.filter(pk=id).update(category = category)
-
+		category = cls.objects.filter(pk=id).update(category = category)
+		return category
 	def __str__(self):
 		return self.category
 
