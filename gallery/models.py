@@ -13,7 +13,7 @@ class Location(models.Model):
 
 	@classmethod
 	def update_location(cls,id,location):
-		updated_location = cls.objects.filter(pk = id).update(location = location)
+		return updated_location = cls.objects.filter(pk = id).update(location = location)
 
 
 	def __str__(self):
@@ -27,6 +27,10 @@ class Category(models.Model):
 
 	def delete_category(self):
 		self.delete()
+
+	@classmethod
+	def update_category(cls,id,category):
+		return category = cls.objects.filter(pk=id).update(category = category)
 
 	def __str__(self):
 		return self.category
