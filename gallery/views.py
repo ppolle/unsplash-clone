@@ -5,7 +5,8 @@ from .models import Image,Location,Category
 def index(request):
 	images = Image.objects.all()
 	imageLocations = Location.objects.all()
-	return render(request,'index.html',{"images":images,"imageLocations":imageLocations})
+	categories = Category.objects.all()
+	return render(request,'index.html',{"images":images,"imageLocations":imageLocations,"categories":categories})
 
 def search_results(request):
 	if request.GET['search']:
@@ -22,5 +23,10 @@ def search_results(request):
 
 def location(request,location):
 	images = Image.filter_by_location(location)
+	imageLocations = Location.objects.all()
+	return render(request,'location.html',{"images":images,"imageLocations":imageLocations})
+
+def imageCategory(request,imageCategory):
+	images = Image.filter_by_category(imageCategory)
 	imageLocations = Location.objects.all()
 	return render(request,'location.html',{"images":images,"imageLocations":imageLocations})

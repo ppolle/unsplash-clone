@@ -6,12 +6,12 @@
 <div class="container">
 	<div class="row">
 		<p class="text-center">
-			{%for location in imageLocations%}
-			<a href="">
-				{{location.location}},</a>
-				
+			{%for category in categories%}
+			 {{category.category}}
 			{%endfor%}
 		</p>
+		
+		
 
 		{%for image in images%}
 			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
