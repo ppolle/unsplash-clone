@@ -4,15 +4,19 @@
 <div class="container">
 
     <div class="row">
-      {% if images%}
-        <h2>Found {{ images|length }} of searched term</h2>
-      {% else %}
-        <h2> Found 0 articles for the search term </h2>
-      {% endif %}
-
+      {%if location%}
+      
+        <h2>Location: {{location.location}}</h2>
+        <hr>
+        {%else%}
+           <h2>Category: {{category.category}}</h2>
+           <hr>
+        {%endif%}
+      
     </div>
 
     <div class="row">
+      {%if images%}
 
     {%for image in images%}
       <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -45,6 +49,13 @@
 
       </div>
     {%endfor%}
+    {%else%}
+      {%if location%}
+        <h2>No Images in this location yet!</h2>
+      {%else%}
+        <h2>No Images in this category yet!</h2>
+      {%endif%}
+    {%endif%}
 
     </div>
 </div>

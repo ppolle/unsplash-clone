@@ -23,10 +23,12 @@ def search_results(request):
 
 def location(request,location):
 	images = Image.filter_by_location(location)
+	location = Location.objects.get(pk = location)
 	imageLocations = Location.objects.all()
-	return render(request,'filter.html',{"images":images,"imageLocations":imageLocations})
+	return render(request,'filter.html',{"images":images,"imageLocations":imageLocations,"location":location})
 
 def imageCategory(request,imageCategory):
 	images = Image.search_image(imageCategory)
+	category = Category.objects.get(pk = imageCategory)
 	imageLocations = Location.objects.all()
-	return render(request,'filter.html',{"images":images,"imageLocations":imageLocations})
+	return render(request,'filter.html',{"images":images,"imageLocations":imageLocations,"category":category})
