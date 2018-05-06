@@ -1,6 +1,7 @@
 {%extends 'base.html'%}
 {% block content%}
-<div class="jumbotron contaainer-fluid">
+{% load static%}
+<div class="jumbotron container-fluid" style="background:url(static/img/rename.jpg)no-repeat center cover;">
   
 </div>
 <div class="container">
@@ -34,13 +35,7 @@
 		</div>
 
 			<div class="col-md-3">				
-				<!-- <a href="#" class="thumbnail" data-toggle="modal" data-target="#myModal">
-			      <img src="{{image.image.url}}" alt="{{ image.image_name }}">
-			    </a>
-			    <div class="caption">
-			    	{{ image.image_name }}
-
-			    </div> -->
+				
 			     <div class="hovereffect thumbnail">
 			        <img class="img-responsive" src="{{image.image.url}}" alt="">
 			        <div class="overlay">
