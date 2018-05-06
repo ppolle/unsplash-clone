@@ -1,16 +1,35 @@
 {%extends 'base.html'%}
 {% block content%}
 {% load static%}
-<div class="jumbotron container-fluid" style="background:url(static/img/rename.jpg)no-repeat center cover;">
+<div class="jumbotron container-fluid" style="background:url(static/img/linus.jpg)no-repeat center cover;">
+	<div class="container text-center" style="margin-left:00px;margin-top:0px">
+		  <h2><strong>Welcome To The Real Unsplash</strong></h2>
+		  <p>Beautiful, Free Pictures</p>
+		   <form class="" role="search" action="{% url 'search_results' %}">
+
+	          <div class="input-group">
+	            <input type="text" class="form-control input-lg" placeholder="Search Article Title" name="search">
+	            <div class="input-group-btn">
+	              <button class="btn btn-default btn-lg" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+	            </div>
+
+	            
+	          </div>
+	          <h4 class="text-left">Search by Category: {%for category in categories%}
+			<a href="imagecategory/{{category.id}}" style="color:white">{{category.category}} </a>
+			 
+			{%endfor%}</h4>
+
+	        </form>
+		
+	</div>
+	
   
 </div>
 <div class="container">
 	<div class="row">
 		<p class="text-center">
-			{%for category in categories%}
-			<a href="imagecategory/{{category.id}}">{{category.category}} </a>
-			 
-			{%endfor%}
+			
 		</p>
 		
 		
