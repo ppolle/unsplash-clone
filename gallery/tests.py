@@ -47,13 +47,13 @@ class ImageTestClass(TestCase):
         self.assertTrue(found_img,img)
 
     def test_search_image_by_category(self):
-        category = 'Travel'
-        found_img = self.image_test.get_image_by_cat(category)
-        self.assertTrue(len(found_img)>1)
+        category = 1
+        found_img = self.image_test.search_image(category)
+        self.assertTrue(len(found_img)>0)
 
     def test_search_image_by_location(self):
-        location = 'Malindi'
-        found_img = self.image_test.get_image_by_location(location)
+        location = 1
+        found_img = self.image_test.filter_by_location(location)
         self.assertTrue(len(found_img)>1)
 
     def tearDown(self):
@@ -80,7 +80,7 @@ class LocationTestClass(TestCase):
 
     def test_update_location(self):
         new_location_name = 'Ukunda'
-        self.location.update_loc(self.location.id,new_location_name)
+        self.location.update_location(self.location.id,new_location_name)
         changed_location = Location.objects.filter(location='Ukunda')
         self.assertTrue(len(changed_location)>0)
 
@@ -111,8 +111,8 @@ class CategoryTestClass(TestCase):
 
     def test_update_category(self):
         new_category_name = 'Food'
-        self.category.update_cat(self.category.id,new_category_name)
-        changed_category = Category.objects.filter(category_name='Food')
+        self.category.update_category(self.category.id,new_category_name)
+        changed_category = Category.objects.filter(category='Food')
         self.assertTrue(len(changed_category)>0)
 
     def test_delete_category(self):
