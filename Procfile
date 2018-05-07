@@ -1,1 +1,1 @@
-web: gunicorn unsplash(unsplash).wsgi
+web: gunicorn unsplash.wsgi
