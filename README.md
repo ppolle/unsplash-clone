@@ -1,6 +1,6 @@
 # Unsplash Clone
 
-## By Peter POlle
+## By Peter Polle
 
 ## Description
 This is a web application enables users view uploaded images, the date it was uploaded, its description and location where the image was taken.
