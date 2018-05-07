@@ -56,8 +56,8 @@ class Image(models.Model):
 		Image.objects.filter(pk=id).update(image=image,image_name=image_name,image_description=image_description,image_location = image_location)
 
 	@classmethod
-	def get_image_by_id(cls,id):
-		image = cls.objects.get(pk = id)
+	def get_image_by_id(cls,imageId):
+		image = cls.objects.get(pk = imageId)
 		return image
 
 	@classmethod

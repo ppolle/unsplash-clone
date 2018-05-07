@@ -32,3 +32,7 @@ def imageCategory(request,imageCategory):
 	category = Category.objects.get(pk = imageCategory)
 	imageLocations = Location.objects.all()
 	return render(request,'filter.html',{"images":images,"imageLocations":imageLocations,"category":category})
+
+def viewDetails(request,imageId):
+	details = Image.get_image_by_id(imageId)
+	return render(request,'index.html',{"details":details})
